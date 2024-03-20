@@ -20,21 +20,23 @@ public class Property {
      * @param price The property price.
      */
     public Property(String description, double price) {
-
+        this.model = description;
+        this.price = price;
+        this.id = "0";
     }
 
     /**
      * Id selector.
      */
     public String getId() {
-        
+        return id;
     }
 
     /**
      * Description selector.
      */
     public String getDescription() {
-
+        return model;
     }
 
     /**
@@ -50,7 +52,7 @@ public class Property {
      * Price selector.
      */
     public double getPrice() {
-        
+        return price;
     }
     
     /**
@@ -59,10 +61,11 @@ public class Property {
      * @param price The new price. Must not be negative.
      */
     public void setPrice(double price) {
-
+        price = this.price;
     }
 
     @Override
     public String toString() {
+        return null;
     }
 }
