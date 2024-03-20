@@ -23,8 +23,12 @@ public class Company {
     /**
      * Constructor of class Company
      */
-    public Company() {
-
+    public Company() 
+    {
+        clients = new ArrayList<User>();
+        sellers = new ArrayList<User>();
+        properties = new ArrayList<Property>();
+        sells = new ArrayList<Sell>();
     }
 
     /**
@@ -33,7 +37,7 @@ public class Company {
      * @return This company clients.
      */
     public List<User> getClients() {
-        return null;         // dummy implementation
+        return clients;         // dummy implementation
     }
 
     /**
@@ -42,7 +46,7 @@ public class Company {
      * @return This company sellers.
      */
     public List<User> getSellers() {
-        return null;         // dummy implementation
+        return sellers;         // dummy implementation
     }
 
     /**
@@ -51,7 +55,7 @@ public class Company {
      * @return This company's properties.
      */
     public List<Property> getProperties() {
-        return null;         // dummy implementation
+        return properties;         // dummy implementation
     }
 
     /**
@@ -60,7 +64,7 @@ public class Company {
      * @return This company sells.
      */
     public List<Sell> getSells() {
-        return null;         // dummy implementation
+        return sells;         // dummy implementation
     }
 
     /**
@@ -69,7 +73,19 @@ public class Company {
      * @param client to register. Must not be null. Must not be registered.
      * @return true If the registration succeeds, false otherwise.
      */
-    public boolean registerClient(User client) {
+    public boolean registerClient(User client) 
+    {
+        for(int i = 0; i < clients.size(); i++)
+        {
+            if(clients.get(i).getName() == client.getName() && 
+            clients.get(i).getPhone() == client.getPhone() &&
+            clients.get(i).getEmail() == client.getEmail())
+            {
+                return false;
+            }
+        }
+        
+        clients.add(client);
         return true;         // dummy implementation
     }
 
@@ -79,7 +95,19 @@ public class Company {
      * @param seller to register. Must not be null. Must not be registered.
      * @return true If the registration succeeds, false otherwise.
      */
-    public boolean registerSeller(User seller) {
+    public boolean registerSeller(User seller) 
+    {
+        for(int i = 0; i < sellers.size(); i++)
+        {
+            if(sellers.get(i).getName() == seller.getName() && 
+            sellers.get(i).getPhone() == seller.getPhone() &&
+            sellers.get(i).getEmail() == seller.getEmail())
+            {
+                return false;
+            }
+        }
+        
+        sellers.add(seller);
         return true;         // dummy implementation
     }
 

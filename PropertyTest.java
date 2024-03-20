@@ -25,7 +25,6 @@ public class PropertyTest
     @Test
     public void testConstrutor()
     {
-        this.property = new Property("T3 Monte Belo", 150000.0);
         assertEquals("T3 Monte Belo", property.getDescription());
         assertEquals(150000.0, property.getPrice());
     }
@@ -33,7 +32,6 @@ public class PropertyTest
     @Test
     public void testToString()
     {
-        this.property = new Property("T3 Monte Belo", 150000.0);
         assertEquals("Descricao : " + property.getDescription() + "\n" + "Preco : " + property.getPrice() + " Euros", property.toString());
     }
 
@@ -45,7 +43,8 @@ public class PropertyTest
     @BeforeEach
     public void setUp()
     {
-
+        this.property = new Property("T3 Monte Belo", 150000.0);
+        this.property = new Property("T3 Monte Belo", 150000.0);
     }
 
     /**
