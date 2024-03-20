@@ -56,6 +56,17 @@ public class CompanyTest
         assertEquals(false, company.registerClient(client2));
     }
     
+    @Test
+    public void testRegisterClientDuplicate()
+    {
+        client1 = new User("José Manuel", "911111111", "zemanel@yahoo.com");
+        //company.registerClient(client1);
+        assertTrue(company.registerClient(client1));
+        
+        //company.registerClient(client1);
+        assertFalse(company.registerClient(client1));
+    }
+    
     /**
      * Define a 'fixture' do teste.
      *

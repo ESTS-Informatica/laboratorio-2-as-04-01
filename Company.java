@@ -79,9 +79,9 @@ public class Company {
         {   
             for(int i = 0; i < clients.size(); i++)
             {
-                if(clients.get(i).getName() == client.getName() && 
-                clients.get(i).getPhone() == client.getPhone() &&
-                clients.get(i).getEmail() == client.getEmail())
+                if(clients.get(i).getName().equals(client.getName()) && 
+                clients.get(i).getPhone().equals(client.getPhone()) &&
+                clients.get(i).getEmail().equals(client.getEmail()))
                 {
                     return false;
                 }
@@ -106,9 +106,9 @@ public class Company {
         {
             for(int i = 0; i < sellers.size(); i++)
             {
-                if(sellers.get(i).getName() == seller.getName() && 
-                sellers.get(i).getPhone() == seller.getPhone() &&
-                sellers.get(i).getEmail() == seller.getEmail())
+                if(sellers.get(i).getName().equals(seller.getName()) && 
+                sellers.get(i).getPhone().equals(seller.getPhone()) &&
+                sellers.get(i).getEmail().equals(seller.getEmail()))
                 {
                     return false;
                 }
@@ -130,9 +130,9 @@ public class Company {
     public boolean registerProperty(Property property) {
         for(int i = 0; i < properties.size(); i++)
         {
-            if(properties.get(i).getDescription() == property.getDescription() && 
-            properties.get(i).getId() == property.getId() &&
-            properties.get(i).getPrice() == property.getPrice())
+            if(properties.get(i).getDescription().equals(property.getDescription()) && 
+            properties.get(i).getId().equals(property.getId()) &&
+            properties.get(i).getPrice() == (property.getPrice()))
             {
                 return false;
             }
