@@ -66,6 +66,7 @@ public class Property {
 
     @Override
     public String toString() {
-        return "Descricao : " + getDescription() + "/n" + "Preco : " + getPrice() + " Euros";
+        System.out.println("Descricao : " + getDescription() + "\n" + "Preco : " + getPrice() + " Euros");
+        return "Descricao : " + getDescription() + "\n" + "Preco : " + getPrice() + " Euros";
     }
 }
