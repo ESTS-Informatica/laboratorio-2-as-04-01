@@ -34,6 +34,28 @@ public class CompanyTest
         assertNotNull(company.getSellers());
     }
     
+    @Test
+    public void  testRegisterClient()
+    {
+        client1 = new User("José Manuel", "911111111", "zemanel@yahoo.com");
+        company.registerClient(client1);
+        
+        assertEquals(false, company.registerClient(client1));
+    }
+    
+    @Test
+    public void  testRegisterClients()
+    {
+        client1 = new User("José Manuel", "911111111", "zemanel@yahoo.com");
+        company.registerClient(client1);
+        
+        client2 = new User("António Francisco", "922222222", "tochico@hotmail.com");
+        company.registerClient(client2);
+        
+        assertEquals(false, company.registerClient(client1));
+        assertEquals(false, company.registerClient(client2));
+    }
+    
     /**
      * Define a 'fixture' do teste.
      *
@@ -42,13 +64,10 @@ public class CompanyTest
     @BeforeEach
     public void setUp()
     {
-        client1 = new User("José Manuel", "911111111", "zemanel@yahoo.com");
-        client2 = new User("António Francisco", "922222222", "tochico@hotmail.com");
         seller1 = new User("Fernando Fernandes", "966777101", "fefe@remax.pt");
         seller2 = new User("Rodrigo Rodrigues", "966777152", "roro@remax.pt");
         company = new Company();
-        company.registerClient(client1);
-        company.registerClient(client2);
+        
         company.registerSeller(seller1);
         company.registerSeller(seller2);
     }

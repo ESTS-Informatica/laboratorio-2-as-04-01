@@ -75,18 +75,23 @@ public class Company {
      */
     public boolean registerClient(User client) 
     {
-        for(int i = 0; i < clients.size(); i++)
-        {
-            if(clients.get(i).getName() == client.getName() && 
-            clients.get(i).getPhone() == client.getPhone() &&
-            clients.get(i).getEmail() == client.getEmail())
+        if(client != null)
+        {   
+            for(int i = 0; i < clients.size(); i++)
             {
-                return false;
+                if(clients.get(i).getName() == client.getName() && 
+                clients.get(i).getPhone() == client.getPhone() &&
+                clients.get(i).getEmail() == client.getEmail())
+                {
+                    return false;
+                }
             }
+        
+            clients.add(client);
+            return true; 
         }
         
-        clients.add(client);
-        return true;         // dummy implementation
+        return false;
     }
 
     /**
@@ -97,18 +102,23 @@ public class Company {
      */
     public boolean registerSeller(User seller) 
     {
-        for(int i = 0; i < sellers.size(); i++)
+        if(seller != null)
         {
-            if(sellers.get(i).getName() == seller.getName() && 
-            sellers.get(i).getPhone() == seller.getPhone() &&
-            sellers.get(i).getEmail() == seller.getEmail())
+            for(int i = 0; i < sellers.size(); i++)
             {
-                return false;
+                if(sellers.get(i).getName() == seller.getName() && 
+                sellers.get(i).getPhone() == seller.getPhone() &&
+                sellers.get(i).getEmail() == seller.getEmail())
+                {
+                    return false;
+                }
             }
+        
+            sellers.add(seller);
+            return true; 
         }
         
-        sellers.add(seller);
-        return true;         // dummy implementation
+        return false;
     }
 
     /**
@@ -118,6 +128,17 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerProperty(Property property) {
+        for(int i = 0; i < properties.size(); i++)
+        {
+            if(properties.get(i).getDescription() == property.getDescription() && 
+            properties.get(i).getId() == property.getId() &&
+            properties.get(i).getPrice() == property.getPrice())
+            {
+                return false;
+            }
+        }
+        
+        properties.add(property);
         return true;         // dummy implementation
     }
 
