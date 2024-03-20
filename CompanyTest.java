@@ -67,6 +67,12 @@ public class CompanyTest
         assertFalse(company.registerClient(client1));
     }
     
+    @Test
+    public void testRegisterClientNull()
+    {
+        assertFalse(company.registerClient(null));
+    }
+    
     /**
      * Define a 'fixture' do teste.
      *
