@@ -35,7 +35,7 @@ public class CompanyTest
     }
     
     @Test
-    public void  testRegisterClient()
+    public void testRegisterClient()
     {
         client1 = new User("José Manuel", "911111111", "zemanel@yahoo.com");
         company.registerClient(client1);
@@ -44,7 +44,7 @@ public class CompanyTest
     }
     
     @Test
-    public void  testRegisterClients()
+    public void testRegisterClients()
     {
         client1 = new User("José Manuel", "911111111", "zemanel@yahoo.com");
         company.registerClient(client1);
@@ -73,6 +73,31 @@ public class CompanyTest
         assertFalse(company.registerClient(null));
     }
     
+    /////////////////////////////////////////////////////////////////
+    
+    @Test
+    public void testRegisterSeller()
+    {
+        seller1 = new User("Fernando Fernandes", "966777101", "fefe@remax.pt");
+        company.registerSeller(seller1);
+        
+        assertEquals(false, company.registerSeller(seller1));
+    }
+    
+    @Test
+    public void testRegisterSellers()
+    {
+        seller1 = new User("Fernando Fernandes", "966777101", "fefe@remax.pt");
+        company.registerSeller(seller1);
+           
+        seller2 = new User("Rodrigo Rodrigues", "966777152", "roro@remax.pt");
+        company.registerSeller(seller2);
+        
+        assertEquals(false, company.registerSeller(seller1));
+        assertEquals(false, company.registerSeller(seller2));
+    
+    }
+    
     /**
      * Define a 'fixture' do teste.
      *
@@ -81,8 +106,6 @@ public class CompanyTest
     @BeforeEach
     public void setUp()
     {
-        seller1 = new User("Fernando Fernandes", "966777101", "fefe@remax.pt");
-        seller2 = new User("Rodrigo Rodrigues", "966777152", "roro@remax.pt");
         company = new Company();
         
         company.registerSeller(seller1);
