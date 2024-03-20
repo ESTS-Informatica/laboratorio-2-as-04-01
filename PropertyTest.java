@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
  */
 public class PropertyTest
 {
-    //Atributos
+    //Atributes
     Property property;
     
     /**
