@@ -98,6 +98,22 @@ public class CompanyTest
     
     }
     
+    @Test
+    public void testRegisterSellerDuplicate()
+    {
+        seller1 = new User("Fernando Fernandes", "966777101", "fefe@remax.pt");
+        
+        assertTrue(company.registerSeller(seller1));
+        
+        assertFalse(company.registerSeller(seller1));
+    }
+    
+    @Test
+    public void testRegisterSellerNull()
+    {
+        assertFalse(company.registerSeller(null));
+    }
+    
     /**
      * Define a 'fixture' do teste.
      *
