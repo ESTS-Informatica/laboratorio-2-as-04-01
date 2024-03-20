@@ -114,6 +114,8 @@ public class CompanyTest
         assertFalse(company.registerSeller(null));
     }
     
+        
+    
     /**
      * Define a 'fixture' do teste.
      *
